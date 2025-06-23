@@ -14,6 +14,9 @@ Orama é um aplicativo web de gerenciamento financeiro pessoal, com o objetivo d
 *   **Banco de Dados:** PostgreSQL.
 *   **Front-end:** A ser definido.
 
+## Modelagem de Dados
+![Captura de tela 2025-06-23 203156](https://github.com/user-attachments/assets/d225e4d8-a986-4db6-ac8c-47603629b07a)
+
 ## Roadmap
 
 O projeto está em fase inicial de planejamento. O próximo passo é definir as tecnologias e começar a implementação das funcionalidades básicas.
