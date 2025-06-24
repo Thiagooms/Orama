@@ -49,10 +49,10 @@ build/
 # =========================
 # BACKEND (Spring Boot)
 # =========================
-/backend/.env
-/backend/.env.*
-/backend/*.log
-/backend/.DS_Store
+.env
+.env.*
+*.log
+.DS_Store
 
 # =========================
 # GERAL
