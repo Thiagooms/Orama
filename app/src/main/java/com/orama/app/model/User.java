@@ -41,7 +41,7 @@ public class User {
     public String getPassword(){ return password; }
     public void setPassword(String password) { this.password = password; }
     
-    public BigDecimal getBalamce(){ return balance; }
+    public BigDecimal getBalance(){ return balance; }
     public void setBalance(BigDecimal balance){ this.balance = balance; }
 
 }
