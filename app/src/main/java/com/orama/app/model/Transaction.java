@@ -5,19 +5,23 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "transaction")
 public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, precision = 12, scale = 2)
     private BigDecimal amount;
 
+    @Column(nullable = false)
     private LocalDate date;
 
+    @Column(length = 500)
     private String description;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
@@ -26,8 +30,6 @@ public class Transaction {
     private User user;
 
     private LocalDate createdAt = LocalDate.now();
-
-    public Transaction() {}
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
