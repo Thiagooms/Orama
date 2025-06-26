@@ -8,41 +8,70 @@ import java.time.LocalDate;
 @Table(name = "goal")
 public class Goal {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(nullable = false, precision = 12, scale = 2)
-    private BigDecimal amount;
+  @Column(nullable = false, precision = 12, scale = 2)
+  private BigDecimal amount;
 
-    @Column(nullable = false)
-    private LocalDate date;
+  @Column(nullable = false)
+  private LocalDate date;
 
-    @Column(length = 100)
-    private String title;
+  @Column(length = 100)
+  private String title;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id", nullable = false)
-    private Client client;
+  @ManyToOne
+  @JoinColumn(name = "client_id", nullable = false)
+  private Client client;
 
-    private LocalDate createdAt = LocalDate.now();
+  private LocalDate createdAt = LocalDate.now();
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+  public Long getId() {
+    return id;
+  }
 
-    public BigDecimal getAmount() { return amount; }
-    public void setAmount(BigDecimal amount) { this.amount = amount; }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public LocalDate getDate() { return date; }
-    public void setDate(LocalDate date) { this.date = date; }
+  public BigDecimal getAmount() {
+    return amount;
+  }
 
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
+  }
 
+  public LocalDate getDate() {
+    return date;
+  }
 
-    public Client getClient() { return client; }
-    public void setClient(Client client) { this.client = client; }
+  public void setDate(LocalDate date) {
+    this.date = date;
+  }
 
-    public LocalDate getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDate createdAt) { this.createdAt = createdAt; }
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public Client getClient() {
+    return client;
+  }
+
+  public void setClient(Client client) {
+    this.client = client;
+  }
+
+  public LocalDate getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(LocalDate createdAt) {
+    this.createdAt = createdAt;
+  }
 }
