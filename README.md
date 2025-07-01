@@ -1,5 +1,9 @@
 # Orama: Sua Visão Completa das Finanças
 
+<div align="center" style="margin: 30px 0;">
+<img src="https://github.com/user-attachments/assets/72defdb8-7d8e-4081-a46e-fd9886d23d98" width="25%" alt="Orama - Sua Visão Completa das Finanças">
+</div>
+
 Orama é um aplicativo web de gerenciamento financeiro pessoal, com o objetivo de oferecer uma visão clara e abrangente das suas finanças. A ideia é criar uma ferramenta intuitiva e organizada, que permita aos usuários registrar suas transações, visualizar seu saldo e planejar seu futuro financeiro com facilidade.
 
 ## Funcionalidades Planejadas
