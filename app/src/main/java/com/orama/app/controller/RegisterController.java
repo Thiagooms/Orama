@@ -30,6 +30,7 @@ public class RegisterController {
       @RequestParam String password,
       @RequestParam String confirmarSenha,
       Model model) {
+
     if (!password.equals(confirmarSenha)) {
       model.addAttribute("error", "As senhas não coincidem!");
       return "register";
