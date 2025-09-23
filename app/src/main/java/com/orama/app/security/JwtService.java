@@ -2,7 +2,7 @@ package com.orama.app.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTVerificationException; // 1. Importação correta
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.orama.app.model.Client;
 import java.time.Instant;
@@ -27,11 +27,11 @@ public class JwtService {
 
   public String generateToken(Client client) {
     return JWT.create()
-        .withSubject(client.getId().toString())
-        .withClaim("role", client.getRole().name())
-        .withIssuedAt(new Date())
-        .withExpiresAt(Date.from(generateExpirationDate()))
-        .sign(getAlgorithm());
+            .withSubject(client.getId().toString())
+            .withClaim("role", client.getRole().name())
+            .withIssuedAt(new Date())
+            .withExpiresAt(Date.from(generateExpirationDate()))
+            .sign(getAlgorithm());
   }
 
   public boolean isTokenValid(String token) {
