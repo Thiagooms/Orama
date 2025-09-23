@@ -2,7 +2,7 @@ package com.orama.app.model;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "goal")
@@ -15,17 +15,28 @@ public class Goal {
   @Column(nullable = false, precision = 12, scale = 2)
   private BigDecimal amount;
 
-  @Column(nullable = false)
-  private LocalDate date;
-
   @Column(length = 100)
   private String title;
 
-  @ManyToOne
+  @Column(name = "created_at", nullable = false, updatable = false)
+  private LocalDateTime createdAt;
+
+  @Column(name = "updated_at")
+  private LocalDateTime updatedAt;
+
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "client_id", nullable = false)
   private Client client;
 
-  private LocalDate createdAt = LocalDate.now();
+  @PrePersist
+  protected void onCreate() {
+    createdAt = LocalDateTime.now();
+  }
+
+  @PreUpdate
+  protected void onUpdate() {
+    updatedAt = LocalDateTime.now();
+  }
 
   public Long getId() {
     return id;
@@ -43,14 +54,6 @@ public class Goal {
     this.amount = amount;
   }
 
-  public LocalDate getDate() {
-    return date;
-  }
-
-  public void setDate(LocalDate date) {
-    this.date = date;
-  }
-
   public String getTitle() {
     return title;
   }
@@ -59,19 +62,27 @@ public class Goal {
     this.title = title;
   }
 
+  public LocalDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(LocalDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public LocalDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(LocalDateTime updatedAt) {
+    this.updatedAt = updatedAt;
+  }
+
   public Client getClient() {
     return client;
   }
 
   public void setClient(Client client) {
     this.client = client;
-  }
-
-  public LocalDate getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(LocalDate createdAt) {
-    this.createdAt = createdAt;
   }
 }
